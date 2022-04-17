@@ -1,0 +1,128 @@
+<!-- Gamik Singh Budhathoki  8762447-->
+<!-- Anushka Mahalekamge  8768260-->
+<!-- Avleen kaur  8726146-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Grocery Shop - Customers</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="py-5 text-center">
+      <a href="#"><img src="assets/img/grocery_logo.png" alt="Grocery Shop"></a>
+      <h2>Customer registration form</h2>
+
+    </div>
+    <fieldset>
+      <form name="frmCustomer3" class="needs-validation customer-form" id="customer-form" method="post"
+        action="customer.php">
+        <p>
+          <label for="Name">Name <span>*</span></label>
+          <input type="text" class="form-control" name="txtName" id="txtName" placeholder="Enter Customer Name"
+            value="" />
+          <span></span>
+        </p>
+        <p>
+          <label for="email">Email <span>*</span></label>
+          <input type="email" class="form-control" name="txtEmail" id="txtEmail" placeholder="Enter Customer Email"
+            value="" required />
+          <span></span>
+        </p>
+
+        <p>
+          <label for="phone">Phone <span>*</span></label>
+          <input type="text" class="form-control" name="txtPhone" id="txtPhone" placeholder="Enter Customer Phone"
+            value="" required />
+          <span></span>
+        </p>
+        <p>
+          <label for="Address">Address <span>*</span></label>
+          <input type="text" class="form-control" name="txtAddress" id="txtAddress" placeholder="Enter Customer Address"
+            value="" required />
+          <span></span>
+        </p>
+        <p>
+          <input type="submit" name="Submit" id="Submit" value="Add Customer"
+            class="btn btn-primary btn-lg btn-block" />
+        </p>
+      </form>
+    </fieldset>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    const emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
+    const namePattern = /^[A-Za-z]+([\ A-Za-z]+)*/;
+    const phonePattern = /(^\d{10}$)|(^\d{3}-\d{3}-\d{4}$)/;
+    const addressPattern = /^[a-zA-Z0-9\s,'-]*$/;
+
+    let email = $("#txtEmail");
+    let phone = $("#txtPhone");
+    let name = $("#txtName");
+    let address = $("#txtAddress");
+    let escape = true;
+
+    let mustEnter = "This Field is Required.";
+
+    $("#Submit").click((event) => {
+      // event.preventDefault();
+      //validating name
+      if (name.val() == "") {
+        name.next().text(mustEnter);
+        escape = false;
+      } else if (!namePattern.test(name.val())) {
+        name.next().text("Invalid Name");
+        escape = false;
+      }
+      //validating email
+      if (email.val() == "") {
+        email.next().text(mustEnter);
+        escape = false;
+      } else if (!emailPattern.test(email.val())) {
+        email.next().text("Invalid Email");
+        escape = false;
+      }
+
+      //validating phone
+      if (phone.val() == "") {
+        phone.next().text(mustEnter);
+        escape = false;
+      } else if (!phonePattern.test(phone.val())) {
+        phone.next().text("Invalid Phone");
+        escape = false;
+      }
+
+      //validating address
+      if (address.val() == "") {
+        address.next().text(mustEnter);
+        escape = false;
+      }
+      // else if (!addressPattern.test(address.val())) {
+      //   address.next().text("Invalid Address");
+      //   escape = false;
+      // }
+
+      if (!escape) {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

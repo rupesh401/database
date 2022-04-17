@@ -1,0 +1,85 @@
+/* Gamik Singh Budhathoki  8762447
+Anushka Mahalekamge  8768260
+Avleen kaur  8726146 */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #ecffec; */
+    background-color: #b29393;
+}
+
+form {
+    margin: 0 auto;
+    text-align: left;
+}
+
+span {
+    color: red;
+    font-size: 14px;
+}
+
+.form-control {
+    /* width: 60%; */
+    margin: 0 auto;
+    border: 2px solid #b29393;
+}
+.item-form, .customer-form{
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 40px;
+    width: 60%;
+    margin-bottom: 60px;
+}
+.btn-block{
+    background-color: #b29393;
+    border: 1px solid #29A56C;
+    border-radius: 5px;
+}
+.btn-block:hover{
+background-color: #29A56C;
+border: 1px solid #136e44;
+}
+
+@media only screen and (max-width: 480px){
+    .container a img{
+        width: 400px;
+    }
+
+    .item-form, .customer-form{
+        width: max-content;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 960px){
+    .container a img {
+        width: 500px;
+    }
+
+    .item-form, .customer-form{
+        width: 700px;
+    }
+}

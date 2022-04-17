@@ -1,0 +1,97 @@
+<!-- Gamik Singh Budhathoki  8762447-->
+<!-- Anushka Mahalekamge  8768260-->
+<!-- Avleen kaur  8726146-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Grocery Shop - Items</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <a href="#"><img src="assets/img/grocery_logo.png" alt="Grocery Shop"></a>
+            <h2>ENTER ITEMS DETAILS</h2>
+        </div>
+        <fieldset>
+
+            <form name="frmItem" class="item-form " id="item-form" method="post" action="items.php">
+                <p>
+                    <label for="txtName">Item Name <span>*</span></label>
+                    <input type="text" class="form-control" name="txtName" id="txtName" placeholder=" Enter Item Name"
+                        value="" required>
+                    <span></span>
+                </p>
+                <p>
+                    <label for="txtPrice">Price <span>*</span></label>
+                    <input type="number" class="form-control" name="txtPrice" id="txtPrice"
+                        placeholder=" Enter Item Price" value="" required>
+                    <span></span>
+                </p>
+                <p>
+                    <label for="txtQuantity">Quantity <span>*</span></label>
+                    <input type="number" class="form-control" name="txtQuantity" id="txtQuantity"
+                        placeholder="Enter Item Quantity" value="" required>
+                    <span></span>
+                </p>
+                <p>
+                    <label for="txtBrand">Brand <span>*</span></label>
+                    <input type="text" class="form-control" name="txtBrand" id="txtBrand" placeholder="Enter Item Brand"
+                        value="" required>
+                    <span></span>
+                </p>
+                <p>
+                    <label for="txtDesc">Description</label>
+                    <textarea class="form-control" name="txtDesc" id="txtDesc" cols="30" rows="5"
+                        placeholder="Enter Item Description"></textarea>
+                </p>
+                <p>
+                    <input type="submit" name="Submit" id="Submit" value="Add Item"
+                        class="btn btn-primary btn-lg btn-block">
+                </p>
+            </form>
+        </fieldset>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        const namePattern = /^[A-Za-z]+([\ A-Za-z]+)*/;
+
+        let name = $("#txtName");
+        let escape = true;
+
+        let mustEnter = "This Field is Required.";
+
+        $("#Submit").click((event) => {
+            // event.preventDefault();
+            //validating name
+            if (name.val() == "") {
+                name.next().text(mustEnter);
+                escape = false;
+            } else if (!namePattern.test(name.val())) {
+                name.next().text("Invalid Name");
+                escape = false;
+            }
+
+            if (!escape) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
