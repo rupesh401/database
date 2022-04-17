@@ -69,7 +69,7 @@ border: 1px solid #136e44;
         width: 400px;
     }
 
-    .item-form, .customer-form{
+    .item-form .customer-form{
         width: 400px;
     }
 }
@@ -79,7 +79,7 @@ border: 1px solid #136e44;
         width: 500px;
     }
 
-    .item-form, .customer-form{
+    .item-form .customer-form{
         width: 700px;
     }
 }
