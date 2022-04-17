@@ -70,7 +70,7 @@ border: 1px solid #136e44;
     }
 
     .item-form, .customer-form{
-        width: max-content;
+        width: 400px;
     }
 }
 
